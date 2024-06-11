@@ -25,7 +25,7 @@ class DicePage extends StatelessWidget {
             //flex: 2,
             child: TextButton(
               onPressed: () {
-                // Add your onPressed code here!
+                print("ddd");
               },
               child: Image.asset('images/dice1.png'),
             ),
