@@ -25,6 +25,7 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 5;
+  int rightDiceNumber = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,8 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = Random().nextInt(5);
+                  leftDiceNumber =
+                      Random().nextInt(6) + 1; //numbers between 1-6
                 });
 
                 print("ddd");
@@ -48,9 +50,12 @@ class _DicePageState extends State<DicePage> {
             //flex: 1,
             child: TextButton(
               onPressed: () {
-                // Add your onPressed code here!
+                setState(() {
+                  rightDiceNumber =
+                      Random().nextInt(6) + 1; //numbers between 1-6
+                });
               },
-              child: Image.asset('images/dice4.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
